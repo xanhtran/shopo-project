@@ -1,8 +1,11 @@
+import Header from '@components/header';
 import React from 'react';
 
 function App() {
   return (
-  <div>Hello</div>
+    <>
+      <Header />
+    </>
   );
 }
 
