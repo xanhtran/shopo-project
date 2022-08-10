@@ -1,28 +1,40 @@
-export const data = [
+export const menuConfig = [
   {
-    id: 1,
-    title: 'Home',
-    name: 'Home',
     label: 'Home',
+    path: '/',
   },
   {
-    id: 2,
-    name: 'Pages',
     label: 'Pages',
+    chilren: [
+      {
+        label: 'About Us',
+        path: '/',
+      },
+      {
+        label: '404 Page',
+        path: '/',
+      },
+      {
+        label: 'Contact Us',
+        path: '/',
+      },
+    ],
   },
   {
-    id: 3,
-    name: 'About Us',
-    label: 'About Us',
-  },
-  {
-    id: 4,
-    name: '404 Page',
-    label: '404 Page',
-  },
-  {
-    id: 5,
-    name: 'Contact Us',
-    label: 'Contact Us',
+    label: 'Shop',
+    chilren: [
+      {
+        label: 'Category',
+        path: '/',
+      },
+      {
+        label: 'Product',
+        path: '/',
+      },
+      {
+        label: 'Shopping cart',
+        path: '/',
+      },
+    ],
   },
 ];

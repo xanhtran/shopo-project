@@ -1,3 +1,5 @@
+@import './variables';
+
 @media only screen and (min-width: 992px) {
   /* For desktop: */
   .container {
@@ -13,5 +15,3 @@
     margin: 0 auto;
   }
 }
-
-@import './variables';

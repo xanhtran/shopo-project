@@ -32,7 +32,9 @@
 }
 
 .drawer-menu-item {
-  font-size: 1px;
+  display: block;
+  color: var(--primary-text-color);
+  font-size: 14px;
   font-weight: 400;
   padding: 11px 20px 11px 35px;
 

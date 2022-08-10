@@ -3,7 +3,7 @@ import { AccordionPropsType } from './accordion.types';
 import './accordion.scss';
 
 const Accordion = (props: AccordionPropsType) => {
-  const { accordionHeader, children } = props;
+  const { accordionHeader, children, closeOther = true } = props;
 
   const divRef = useRef<HTMLDivElement>(null);
 
@@ -21,13 +21,15 @@ const Accordion = (props: AccordionPropsType) => {
   };
 
   const toggleCollapse = () => {
-    const accordionOpen = document.querySelector('.accordion-active');
+    const accordionOpenList = document.querySelectorAll('.accordion-active');
 
     if (divRef.current) toggleContent(divRef.current);
 
-    if (accordionOpen && accordionOpen !== divRef.current) {
-      toggleContent(accordionOpen);
-    }
+    accordionOpenList.forEach((accordion) => {
+      if (accordion !== divRef.current && closeOther) {
+        toggleContent(accordion);
+      }
+    });
   };
 
   return (

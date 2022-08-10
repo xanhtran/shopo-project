@@ -1,9 +1,10 @@
 import Accordion from '@components/accordion';
 import Logo from '@components/logo';
 import React from 'react';
-import { DrawerPropsType } from './drawe.types';
+import { DrawerPropsType } from './drawer.types';
 import './drawer.scss';
 import MenuHeader from './menu';
+import { menuConfig } from './drawer.constants';
 
 const Drawer = (props: DrawerPropsType) => {
   const { setIsActive } = props;
@@ -21,14 +22,28 @@ const Drawer = (props: DrawerPropsType) => {
         </div>
 
         <div className="drawer-content">
-          <Accordion accordionHeader={<MenuHeader />}>
-            <div className="drawer-menu-item">Home</div>
-          </Accordion>
-          <Accordion accordionHeader={<MenuHeader />}>
-            <div className="drawer-menu-item">Home</div>
-          </Accordion>
-          <Accordion accordionHeader={<MenuHeader />}>
-            <div className="drawer-menu-item">Home</div>
+          {menuConfig.map((item, index) => {
+            return (
+              <Accordion
+                key={index}
+                closeOther={item?.chilren ? true : false}
+                accordionHeader={<MenuHeader path={item?.path}>{item.label}</MenuHeader>}
+              >
+                {item?.chilren &&
+                  item?.chilren.map((item, index) => {
+                    return (
+                      <a key={index} className="drawer-menu-item" href={item.path}>
+                        {item.label}
+                      </a>
+                    );
+                  })}
+              </Accordion>
+            );
+          })}
+          <Accordion accordionHeader={<MenuHeader>item.label</MenuHeader>} closeOther={false}>
+            <a className="drawer-menu-item" href={''}>
+              item.label
+            </a>
           </Accordion>
         </div>
       </aside>
