@@ -1,4 +1,4 @@
-@media only screen and (max-width: 1230px) {
+@media only screen and (min-width: 992px) {
   /* For desktop: */
   .container {
     padding: 0 15px;
@@ -6,9 +6,12 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 740px) {
   /* For mobile phones: */
   .container {
-    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
   }
 }
+
+@import './variables';

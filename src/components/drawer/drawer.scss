@@ -4,10 +4,10 @@
   left: 0;
   display: flex;
   flex-direction: row-reverse;
-  background-color: rgba(0, 0, 0, 0.522);
   width: 100%;
   height: 100vh;
   z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.522);
 }
 
 .drawer-outside {
@@ -23,11 +23,20 @@
   background-color: #fff;
   box-shadow: 2px 0 3px 0 rgb(0 0 0 / 12%);
   transition: all 0.4s ease;
-  // transform: translateX(-290px);
 
   .drawer-header {
     border-bottom: 1px solid #eaeced;
     padding: 35px 20px 20px;
     margin-bottom: 20px;
+  }
+}
+
+.drawer-menu-item {
+  font-size: 1px;
+  font-weight: 400;
+  padding: 11px 20px 11px 35px;
+
+  &:hover {
+    background-color: #eee;
   }
 }

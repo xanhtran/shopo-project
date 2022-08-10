@@ -1,0 +1,15 @@
+.accordion-container {
+  .accordion-header {
+    cursor: pointer;
+  }
+
+  .accordion-content {
+    background-color: #f8f8f8;
+    text-transform: uppercase;
+    list-style: none;
+    border-bottom: 1px solid #eee;
+    height: 0;
+    overflow: hidden;
+    transition: height ease 0.5s;
+  }
+}

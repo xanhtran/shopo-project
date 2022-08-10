@@ -1,9 +1,9 @@
-import Dropdown from '@components/dropdown';
+import Accordion from '@components/accordion';
 import Logo from '@components/logo';
 import React from 'react';
 import { DrawerPropsType } from './drawe.types';
-import { data } from './drawer.constants';
 import './drawer.scss';
+import MenuHeader from './menu';
 
 const Drawer = (props: DrawerPropsType) => {
   const { setIsActive } = props;
@@ -21,9 +21,15 @@ const Drawer = (props: DrawerPropsType) => {
         </div>
 
         <div className="drawer-content">
-          <Dropdown data={data} />
-          <Dropdown data={data} />
-          <Dropdown data={data} />
+          <Accordion accordionHeader={<MenuHeader />}>
+            <div className="drawer-menu-item">Home</div>
+          </Accordion>
+          <Accordion accordionHeader={<MenuHeader />}>
+            <div className="drawer-menu-item">Home</div>
+          </Accordion>
+          <Accordion accordionHeader={<MenuHeader />}>
+            <div className="drawer-menu-item">Home</div>
+          </Accordion>
         </div>
       </aside>
     </div>

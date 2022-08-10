@@ -1,0 +1,12 @@
+.menu-header {
+  display: block;
+  padding: 11px 20px;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #262634;
+
+  &:hover {
+    background-color: #eee;
+    font-weight: 600;
+  }
+}
