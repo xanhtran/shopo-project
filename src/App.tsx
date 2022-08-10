@@ -1,10 +1,12 @@
-import Header from '@components/header';
+import Drawer from '@components/drawer';
 import React from 'react';
+import MainLayout from './layouts/main-layout';
 
 function App() {
   return (
     <>
-      <Header />
+      <MainLayout />
+      {/* <Drawer /> */}
     </>
   );
 }
