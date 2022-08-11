@@ -22,9 +22,9 @@
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #fff;
-    border: 1px solid #ecf3f6;
-    z-index: 1000;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    z-index: var(--z-index-400);
     text-align: center;
     list-style: none;
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%);
@@ -37,7 +37,7 @@
     cursor: pointer;
     &:hover {
       background-color: rgb(228, 227, 227);
-      color: #717179;
+      color: var(--color-primary);
     }
   }
 }

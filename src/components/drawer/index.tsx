@@ -40,11 +40,11 @@ const Drawer = (props: DrawerPropsType) => {
               </Accordion>
             );
           })}
-          <Accordion accordionHeader={<MenuHeader>item.label</MenuHeader>} closeOther={false}>
+          {/* <Accordion accordionHeader={<MenuHeader>item.label</MenuHeader>} closeOther={false}>
             <a className="drawer-menu-item" href={''}>
               item.label
             </a>
-          </Accordion>
+          </Accordion> */}
         </div>
       </aside>
     </div>

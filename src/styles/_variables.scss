@@ -5,6 +5,20 @@
 // $color-primary: #717179;
 
 :root {
-  --primary-color: #717179;
-  --primary-text-color: #262634;
+  --color-primary: #717179;
+  --color-text: #262634;
+  --color-bg: #f0f0f0;
+  --color-bg-second: #eee;
+  --color-bg-sidebar: #f4f4f4;
+  --color-border: #eaeced;
+  --color-border-shadow: rgba(0, 0, 0, 0.1);
+
+  --color-white: #ffffff;
+  --color-orange: #dc9831;
+
+  --z-index-200: 200;
+  --z-index-400: 400;
+  --z-index-600: 600;
+  --z-index-800: 800;
+  --z-index-latest: 1000;
 }
