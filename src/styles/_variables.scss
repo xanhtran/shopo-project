@@ -1,20 +1,24 @@
-/*
- * Colors
- */
-
-// $color-primary: #717179;
-
 :root {
   --color-primary: #717179;
   --color-text: #262634;
   --color-bg: #f0f0f0;
   --color-bg-second: #eee;
   --color-bg-sidebar: #f4f4f4;
+  --color-bg-hover: #e4e3e3;
   --color-border: #eaeced;
   --color-border-shadow: rgba(0, 0, 0, 0.1);
 
   --color-white: #ffffff;
   --color-orange: #dc9831;
+  --color-grey: #989898;
+  --color-white-grey: #f8f8f8;
+
+  --text-small: 0.75rem;
+  --text-medium: 0.8125rem;
+  --text-semi-large: 0.9rem;
+  --text-large: 1.125rem;
+  --text-semi-huge: 1.25rem;
+  --text-huge: 1.375rem;
 
   --z-index-200: 200;
   --z-index-400: 400;

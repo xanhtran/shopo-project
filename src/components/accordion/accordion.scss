@@ -4,11 +4,11 @@
   }
 
   .accordion-content {
-    background-color: #f8f8f8;
+    background-color: var(--color-white-grey);
+    height: 0;
     text-transform: uppercase;
     list-style: none;
-    border-bottom: 1px solid #eee;
-    height: 0;
+    border-bottom: 1px solid var(--color-border);
     overflow: hidden;
     transition: height ease 0.3s;
   }

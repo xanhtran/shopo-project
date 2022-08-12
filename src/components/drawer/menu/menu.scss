@@ -2,15 +2,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 11px 20px;
-  font-size: 15px;
-  text-transform: uppercase;
-  color: #262634;
+  padding: 10px 20px;
 
   .menu-label {
-    color: var(--color-text);
     display: block;
     width: 100%;
+    color: var(--color-text);
+    font-size: var(--text-semi-large);
+    font-weight: 500;
+    letter-spacing: 0.5px;
   }
 
   &:hover {
@@ -28,8 +28,8 @@
     &::after,
     &::before {
       content: '';
-      position: absolute;
       display: block;
+      position: absolute;
       background-color: var(--color-primary);
       transition: 0.3s;
     }

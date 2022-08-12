@@ -5,7 +5,7 @@
 .select-dropdown {
   position: relative;
   font-size: 12px;
-  color: #a4abae;
+  color: var(--color-text);
   font-weight: 500;
   .select-dropdown-btn {
     display: flex;
@@ -36,7 +36,7 @@
 
     cursor: pointer;
     &:hover {
-      background-color: rgb(228, 227, 227);
+      background-color: var(--color-bg-hover);
       color: var(--color-primary);
     }
   }

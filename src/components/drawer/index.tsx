@@ -17,11 +17,11 @@ const Drawer = (props: DrawerPropsType) => {
     <div className="drawer-container">
       <div className="drawer-outside" onClick={closeDrawer}></div>
       <aside className="drawer-wrapper">
-        <div className="drawer-header">
+        <div className="drawer-wrapper__header">
           <Logo />
         </div>
 
-        <div className="drawer-content">
+        <div className="drawer-wrapper__content">
           {menuConfig.map((item, index) => {
             return (
               <Accordion

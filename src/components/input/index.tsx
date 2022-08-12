@@ -3,7 +3,7 @@ import { InputPropsType } from './input.types';
 import './input.scss';
 
 const Input = (props: InputPropsType) => {
-  const { name, type, value, placeholder } = props;
+  const { name, type, value, placeholder, onChange } = props;
 
   return (
     <div className="input-wrapper">
@@ -11,6 +11,7 @@ const Input = (props: InputPropsType) => {
         name={name}
         type={type}
         value={value}
+        onChange={onChange}
         placeholder={placeholder}
         className="input-type"
       />

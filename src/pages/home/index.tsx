@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import SimpleSlider from './slider';
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <div>
+      <SimpleSlider />
+    </div>
+  );
+};
 
-export default Home
+export default Home;

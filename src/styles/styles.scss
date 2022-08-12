@@ -1,8 +1,10 @@
 @import './variables';
+@import './normalize';
 
 @media only screen and (min-width: 992px) {
   /* For desktop: */
-  .container {
+  .wrapper {
+    max-width: 1230px;
     padding: 0 15px;
     margin: 0 auto;
   }
@@ -10,7 +12,7 @@
 
 @media only screen and (max-width: 740px) {
   /* For mobile phones: */
-  .container {
+  .wrapper {
     padding: 0 15px;
     margin: 0 auto;
   }
