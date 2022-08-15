@@ -7,6 +7,11 @@
   height: calc(100vh - 94px);
   margin-top: 94px;
 
+  // .widget,
+  // .outlet-product {
+  //   padding: 0 15px;
+  // }
+
   .widget {
     width: 270px;
     height: calc(100vh - 97px);
@@ -16,5 +21,6 @@
   .outlet-product {
     width: calc(100% - 270px);
     height: calc(100vh - 97px);
+    margin-left: 15px;
   }
 }
