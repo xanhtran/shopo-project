@@ -9,22 +9,32 @@ const ProductSeller = (props: BestSellerPropsType) => {
 
   const [sellerProduct, setSellerProduct] = useState<ProductType[]>();
 
-  // const getProductSeller = () => {
-  //   const data = getProducts();
-  //   if (data) setSellerProduct(data);
-  // };
-
   useEffect(() => {
-    const sellerProduct = async () => {
-      getProducts();
+    const getProductSeller = async () => {
+      const data = await getProducts();
+
+      if (data) setSellerProduct(data);
     };
+
+    getProductSeller();
   }, [sellerProduct]);
 
   return (
-    <div className="best-seller">
-      <div className="best-seller__heading">{heading}</div>
-      <div className="best-seller__body">
-        <BestSellerItem heading="" />
+    <div className="product-seller">
+      <div className="product-seller__heading">{heading}</div>
+      <div className="product-seller__body">
+        {sellerProduct?.map((item, index) => {
+          if (index < 2)
+            return (
+              <BestSellerItem
+                key={item.id}
+                image={item.image}
+                price={item.price}
+                title={item.title}
+                // rating={(item?.rating?.rate, item.rating?.count)}
+              />
+            );
+        })}
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { sellingProduct } from '../selling-product.constant';
+import '@App/pages/home/selling-product/selling-product.scss';
 
 const WantedProduct = () => {
   const setting = {
@@ -20,7 +21,7 @@ const WantedProduct = () => {
             <div className="wanted-banner" key={item.id}>
               <img src={item.url} alt="" className="wanted-banner-img" />
               <div className="wanted-banner-content">
-                <h4>Off</h4>
+                <h4 className="title">Off</h4>
                 <span className="sale">{item.sale}</span>
               </div>
             </div>

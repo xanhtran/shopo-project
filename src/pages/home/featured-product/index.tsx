@@ -62,15 +62,6 @@ const FeaturedProduct = () => {
         })}
       </Slider>
 
-      {/* <div className="item">
-        {data?.map((item, index) => {
-          if (index < 3)
-            return (
-              <ProductItem key={item.id} title={item.title} image={item.image} price={item.price} />
-            );
-        })}
-      </div> */}
-
       {/* </ArrowSlider> */}
       {/* </div> */}
     </div>

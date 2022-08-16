@@ -1,18 +1,22 @@
+import { ProductType } from '@App/common/types';
 import React from 'react';
-import { BestSellerPropsType } from '../selling-product.types';
 
-const BestSellerItem = (props: BestSellerPropsType) => {
+const BestSellerItem = (props: ProductType) => {
+  const { image, title, price } = props;
+
   return (
     <div className="selling-item">
-      <div className="selling-item-img">
-        <img src="" alt="" className="selling-item-img__image" />
-      </div>
+      <div
+        className="selling-item-img"
+        style={{
+          backgroundImage: `url(http://obest.org/html/shopo/assets/images/products/small/product1.jpg)`,
+        }}
+      ></div>
       <div className="selling-item-description">
-        <span className="rate"></span>
-        <span className="name"></span>
-        <span className="price"></span>
+        <span className="rate">5 sao</span>
+        <span className="name">{title}</span>
+        <span className="price">${price}</span>
       </div>
-      BestSellerItem
     </div>
   );
 };
