@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
-import { sellingProduct } from './selling-product.constant';
+import { sellingProduct } from '../selling-product.constant';
 
 const WantedProduct = () => {
   const setting = {

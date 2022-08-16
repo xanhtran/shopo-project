@@ -1,15 +1,14 @@
+import { ProductType } from '@App/common/types';
 import React from 'react';
 import './featured-product.scss';
-import { ProductItemPropsType } from './featured-product.types';
 
-const ProductItem = (props: ProductItemPropsType) => {
+const ProductItem = (props: ProductType) => {
   const { title, price, image } = props;
 
   return (
     <div className="product-item">
-      <div className="product-item__image">
+      <div className="product-item__image" style={{ backgroundImage: `url(${image})` }}>
         <span className="product-item__image__sale">-55%</span>
-        <img src={image} alt="" />
       </div>
 
       <div className="product-item__action">
@@ -60,12 +59,11 @@ const ProductItem = (props: ProductItemPropsType) => {
           </a>
         </div>
       </div>
-      {/* <div className="product-item__description"> */}
-      <a className="product-item__description__title">{title}</a>
-      <div className="product"></div>
-      <span className="product-item__description__price">$ {price}</span>
+      <div className="product-item__description">
+        <a className="product-item__description__title">{title}</a>
+        <span className="product-item__description__price">$ {price}</span>
+      </div>
     </div>
-    // </div>
   );
 };
 

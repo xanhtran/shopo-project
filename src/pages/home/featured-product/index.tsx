@@ -1,14 +1,14 @@
+import { ProductType } from '@App/common/types';
 import { getProducts } from '@App/entities/product/product.api';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import React, { useEffect, useRef, useState } from 'react';
 import Slider from 'react-slick';
 import './featured-product.scss';
-import { ProductItemPropsType } from './featured-product.types';
 import ProductItem from './ProductItem';
 
 const FeaturedProduct = () => {
-  const [data, setData] = useState<ProductItemPropsType[]>();
+  const [data, setData] = useState<ProductType[]>();
 
   const slideRef = useRef<Slider>(null);
 
@@ -27,19 +27,13 @@ const FeaturedProduct = () => {
     slidesToScroll: 4,
   };
 
-  const getProduct = async () => {
-    const products = await getProducts();
-
-    if (products) {
-      setData(products);
-    }
-  };
-
-  getProduct();
-
   useEffect(() => {
     const getProduct = async () => {
-      await getProducts();
+      const products = await getProducts();
+
+      if (products) {
+        setData(products);
+      }
     };
 
     getProduct();
