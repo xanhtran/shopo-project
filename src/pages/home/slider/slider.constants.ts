@@ -5,7 +5,6 @@ import Slider3 from '@App/assets/slider3.jpg';
 export const sliderImage = [
   {
     id: 1,
-
     title: ' Traditional Style Furnitures',
     description: 'This is the first slider Image of our carousel',
     urls: Slider1,

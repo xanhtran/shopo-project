@@ -1,12 +1,15 @@
 import React from 'react';
 import './featured-product.scss';
+import { ProductItemPropsType } from './featured-product.types';
 
-const ProductItem = () => {
+const ProductItem = (props: ProductItemPropsType) => {
+  const { title, price, image } = props;
+
   return (
     <div className="product-item">
       <div className="product-item__image">
         <span className="product-item__image__sale">-55%</span>
-        <img src="http://obest.org/html/shopo/assets/images/products/product5.jpg" alt="" />
+        <img src={image} alt="" />
       </div>
 
       <div className="product-item__action">
@@ -57,12 +60,12 @@ const ProductItem = () => {
           </a>
         </div>
       </div>
-
-      <div className="product-item__description">
-        <a className="product-item__description__title">Fjallraven - Foldsack</a>
-        <span className="product-item__description__price">$ 3000</span>
-      </div>
+      {/* <div className="product-item__description"> */}
+      <a className="product-item__description__title">{title}</a>
+      <div className="product"></div>
+      <span className="product-item__description__price">$ {price}</span>
     </div>
+    // </div>
   );
 };
 

@@ -1,12 +1,15 @@
-import ArrowSlider from '@components/slider/ArrowSlider';
-import React, { useEffect, useRef } from 'react';
-import Slider from 'react-slick';
-import ProductItem from './ProductItem';
+import { getProducts } from '@App/entities/product/product.api';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import React, { useEffect, useRef, useState } from 'react';
+import Slider from 'react-slick';
 import './featured-product.scss';
+import { ProductItemPropsType } from './featured-product.types';
+import ProductItem from './ProductItem';
 
 const FeaturedProduct = () => {
+  const [data, setData] = useState<ProductItemPropsType[]>();
+
   const slideRef = useRef<Slider>(null);
 
   const handleNextItem = () => {
@@ -24,9 +27,23 @@ const FeaturedProduct = () => {
     slidesToScroll: 4,
   };
 
+  const getProduct = async () => {
+    const products = await getProducts();
+
+    if (products) {
+      setData(products);
+    }
+  };
+
+  getProduct();
+
   useEffect(() => {
-    // const dataProduct = getProduct();
-  }, []);
+    const getProduct = async () => {
+      await getProducts();
+    };
+
+    getProduct();
+  }, [data]);
 
   return (
     <div className="featured-product">
@@ -44,14 +61,22 @@ const FeaturedProduct = () => {
       {/* <div style={{ position: 'relative' }}> */}
       {/* <ArrowSlider onNext={handleNextItem} onPrev={handlePreviousItem}> */}
       <Slider {...settings} ref={slideRef}>
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
+        {data?.map((item) => {
+          return (
+            <ProductItem key={item.id} title={item.title} image={item.image} price={item.price} />
+          );
+        })}
       </Slider>
+
+      {/* <div className="item">
+        {data?.map((item, index) => {
+          if (index < 3)
+            return (
+              <ProductItem key={item.id} title={item.title} image={item.image} price={item.price} />
+            );
+        })}
+      </div> */}
+
       {/* </ArrowSlider> */}
       {/* </div> */}
     </div>
