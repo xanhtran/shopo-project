@@ -1,5 +1,6 @@
 .selling-product {
   display: flex;
+  justify-content: space-between;
   width: 100%;
   height: 295px;
   margin-bottom: 57px;
@@ -13,9 +14,7 @@
 .product-seller {
   display: flex;
   flex-direction: column;
-  align-items: left;
-  width: calc(100% / 3);
-  // padding: 0 15px;
+  width: 270px;
 
   &__heading {
     font-size: var(--text-semi-huge);
@@ -24,8 +23,69 @@
     text-transform: uppercase;
     margin-bottom: 20px;
   }
+}
 
-  &__body {
+//
+// ────────────────────────────────────────────────────── I ──────────
+//   :::::: W A N T E D    P R O D U C T : :  :   :    :     :        :          :
+// ────────────────────────────────────────────────────────────────
+//
+
+.wanted-product {
+  position: relative;
+  width: 270px;
+
+  &__title {
+    font-size: var(--text-semi-huge);
+    font-weight: 500;
+    color: var(--color-text);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  &__slider {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 3px;
+    right: 0;
+
+    .prevIcon,
+    .nextIcon {
+      width: 15px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+}
+.wanted-banner {
+  position: relative;
+}
+
+.wanted-banner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 22px;
+  top: 14px;
+  z-index: var(--z-index-400);
+  width: 92px;
+  height: 92px;
+  background-color: var(--color-white);
+  border-radius: 50%;
+
+  .title,
+  .sale {
+    color: var(--color-orange);
+    text-transform: uppercase;
+  }
+  .title {
+    font-size: var(--text-large);
+  }
+
+  .sale {
+    font-size: var(--text-huge);
   }
 }
 
@@ -37,24 +97,24 @@
 
 .selling-item {
   display: flex;
+  justify-content: space-between;
   margin-bottom: 38px;
   width: 100%;
 
   &-img {
     width: 97px;
-    height: 87px;
+    height: 80px;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     border: 1px solid var(--color-border);
   }
 
   &-description {
     display: flex;
-    flex-direction: column;
-    margin-left: 10px;
     justify-content: center;
-    width: calc(100% - 100px);
+    flex-direction: column;
+    width: calc(100% - 124px);
     .rate {
       margin-bottom: 4px;
     }
@@ -66,59 +126,9 @@
       white-space: nowrap;
     }
     .price {
-      color: var(--color-quite-grey);
       margin-top: 10px;
+      color: var(--color-quite-grey);
       font-weight: 500;
     }
-  }
-}
-
-//
-// ────────────────────────────────────────────────────── I ──────────
-//   :::::: W A N T E D    P R O D U C T : :  :   :    :     :        :          :
-// ────────────────────────────────────────────────────────────────
-//
-
-.wanted-product {
-  width: calc(100% / 3);
-  &__title {
-    font-size: var(--text-semi-huge);
-    font-weight: 500;
-    color: var(--color-text);
-    text-transform: uppercase;
-    margin-bottom: 20px;
-  }
-}
-.wanted-banner {
-  position: relative;
-}
-
-.wanted-banner-content {
-  position: absolute;
-  right: 32px;
-  top: 14px;
-  z-index: var(--z-index-400);
-  width: 92px;
-  height: 92px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-white);
-  border-radius: 50%;
-
-  .title,
-  .sale {
-    color: var(--color-orange);
-    text-transform: uppercase;
-  }
-  .title {
-    font-size: var(--text-large);
-    // font-weight: 300;
-  }
-
-  .sale {
-    font-size: var(--text-huge);
-    // font-weight: 400;
   }
 }

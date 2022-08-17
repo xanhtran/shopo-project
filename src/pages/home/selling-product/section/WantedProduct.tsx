@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Slider from 'react-slick';
 import { sellingProduct } from '../selling-product.constant';
 import '@App/pages/home/selling-product/selling-product.scss';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const WantedProduct = () => {
+  const slideRef = useRef<Slider>(null);
+
+  const handlePreviousItem = () => {
+    slideRef.current?.slickPrev();
+  };
+
+  const handleNextItem = () => {
+    slideRef.current?.slickNext();
+  };
+
   const setting = {
     isfinite: true,
     speed: 500,
@@ -15,7 +27,16 @@ const WantedProduct = () => {
     <div className="wanted-product">
       <h3 className="wanted-product__title">Most wanted</h3>
 
-      <Slider {...setting}>
+      <div className="wanted-product__slider">
+        <span onClick={handlePreviousItem}>
+          <ArrowBackIosIcon className="prevIcon" />
+        </span>
+        <span onClick={handleNextItem}>
+          <ArrowForwardIosIcon className="nextIcon" />
+        </span>
+      </div>
+
+      <Slider {...setting} ref={slideRef}>
         {sellingProduct.map((item) => {
           return (
             <div className="wanted-banner" key={item.id}>

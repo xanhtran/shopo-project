@@ -6,12 +6,7 @@ const BestSellerItem = (props: ProductType) => {
 
   return (
     <div className="selling-item">
-      <div
-        className="selling-item-img"
-        style={{
-          backgroundImage: `url(http://obest.org/html/shopo/assets/images/products/small/product1.jpg)`,
-        }}
-      ></div>
+      <div className="selling-item-img" style={{ backgroundImage: `url(${image})` }}></div>
       <div className="selling-item-description">
         <span className="rate">5 sao</span>
         <span className="name">{title}</span>

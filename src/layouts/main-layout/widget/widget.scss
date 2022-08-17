@@ -3,7 +3,7 @@
 }
 
 .widget-category-list {
-  .widge-title {
+  .widget-title {
     color: var(--color-text);
     text-transform: uppercase;
     margin-bottom: 24px;
@@ -12,18 +12,31 @@
   }
 
   background-color: var(--color-bg-sidebar);
-  padding: 31px 30px 27px 30px;
+  // padding: 31px 30px 27px 30px;
   margin-bottom: 29px;
   width: 100%;
   height: auto;
   transition: all ease 0.4s;
 }
+
+.widget-banner {
+  height: 354px;
+  width: 100%;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 32px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .widget-newsletter {
   margin-bottom: 35px;
-  border: 1px solid darkblue;
 }
 
 .widget-testimonial {
   display: flex;
   flex-direction: column;
+  margin-bottom: 30px;
 }
