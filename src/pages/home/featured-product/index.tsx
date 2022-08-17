@@ -25,6 +25,16 @@ const FeaturedProduct = () => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   useEffect(() => {
@@ -43,7 +53,7 @@ const FeaturedProduct = () => {
     <div className="featured-product">
       <h3 className="featured-product__heading"> Featured Product </h3>
 
-      <div className="featured-product__navigate-icon">
+      <div className="featured-product__slider">
         <span onClick={handlePreviousItem}>
           <ArrowBackIosIcon className="prevIcon" />
         </span>

@@ -24,7 +24,7 @@
   box-shadow: 2px 0 3px 0 rgb(0 0 0 / 12%);
   transition: all 0.4s ease;
 
-  .drawer-wrapper__header {
+  &__header {
     border-bottom: 1px solid var(--color-border);
     padding: 35px 20px 20px;
     margin-bottom: 20px;
@@ -34,7 +34,7 @@
 .drawer-menu-item {
   display: block;
   color: var(--color-text);
-  font-size: 14px;
+  font-size: var(--text-medium);
   font-weight: 400;
   padding: 11px 20px 11px 35px;
 

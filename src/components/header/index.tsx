@@ -42,60 +42,58 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="wrapper">
-        <div className="header-container">
-          <Logo />
+      <div className="header-container">
+        <Logo />
 
-          <div className="header-dropdown">
-            <Select data={currencies} onChange={onChange} name="currencies" />
+        <div className="header-dropdown">
+          <Select data={currencies} onChange={onChange} name="currencies" />
 
-            <div className="header-language">
-              <Select data={languages} name=" languages" onChange={onChange} />
-            </div>
+          <div className="header-language">
+            <Select data={languages} name=" languages" onChange={onChange} />
           </div>
-
-          <div className="header-search">
-            <div className="header-search__options">
-              <Select data={categories} name="categories" onChange={onChange} />
-            </div>
-
-            <div className="header-search__input">
-              <Input
-                name="input"
-                type="text"
-                value=""
-                placeholder="Search"
-                onChange={(e) => {
-                  onChange(e);
-                }}
-              />
-              <button className="header-search__icon">
-                <SearchIcon />
-              </button>
-            </div>
-          </div>
-
-          <div className="header-links">
-            <a href="/" className="header-links__signin">
-              Sign in
-            </a>
-
-            <a href="/" className="header-links__cart">
-              Cart
-            </a>
-          </div>
-
-          <div className="header-cart">
-            <LocalMallOutlinedIcon />
-            <ArrowDropDownIcon />
-          </div>
-
-          <button className="header-sidemenu" onClick={handleClick}>
-            <MenuIcon />
-          </button>
-
-          {isActive && <Drawer setIsActive={setIsActive} />}
         </div>
+
+        <div className="header-search">
+          <div className="header-search__options">
+            <Select data={categories} name="categories" onChange={onChange} />
+          </div>
+
+          <div className="header-search__input">
+            <Input
+              name="input"
+              type="text"
+              value=""
+              placeholder="Search"
+              onChange={(e) => {
+                onChange(e);
+              }}
+            />
+            <button className="header-search__icon">
+              <SearchIcon />
+            </button>
+          </div>
+        </div>
+
+        <div className="header-links">
+          <a href="/" className="header-links__signin">
+            Sign in
+          </a>
+
+          <a href="/" className="header-links__cart">
+            Cart
+          </a>
+        </div>
+
+        <div className="header-cart">
+          <LocalMallOutlinedIcon />
+          <ArrowDropDownIcon />
+        </div>
+
+        <button className="header-sidemenu" onClick={handleClick}>
+          <MenuIcon />
+        </button>
+
+        {isActive && <Drawer setIsActive={setIsActive} />}
       </div>
     </header>
   );

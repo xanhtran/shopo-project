@@ -9,7 +9,7 @@
     padding: 16px 0;
   }
 
-  &__navigate-icon {
+  &__slider {
     display: flex;
     justify-content: flex-end;
     position: absolute;
@@ -157,6 +157,21 @@
       color: var(--color-text);
       font-weight: 600;
       margin-top: auto;
+    }
+  }
+}
+
+@media (max-width: 740px) {
+  .featured-product {
+    &__heading {
+      font-size: var(--text-large);
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 16px 0;
+    }
+
+    &__slider {
+      top: 18px;
     }
   }
 }

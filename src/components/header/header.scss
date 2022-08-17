@@ -1,13 +1,9 @@
 .header {
   display: flex;
   align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 114px;
   background-color: var(--color-white);
-  z-index: var(--z-index-latest);
 }
 
 .header-container {
@@ -123,7 +119,8 @@
 @media (max-width: 740px) {
   .header {
     height: 68px;
-    justify-content: space-around;
+    display: flex;
+    justify-content: space-between;
   }
 
   .header-dropdown,
