@@ -5,11 +5,11 @@
   margin-bottom: 57px;
 
   &-heading {
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
     width: 270px;
     height: 100%;
     background-color: var(--color-bg-banner);
@@ -82,12 +82,6 @@
     &-image {
       width: 100%;
       height: auto;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
     }
   }
 }

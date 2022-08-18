@@ -91,6 +91,7 @@
     &__add-to-compare {
       background-color: var(--color-white);
       padding: 2px 6px;
+      width: 34px;
 
       &:hover {
         background-color: var(--color-orange);
@@ -101,7 +102,7 @@
       background-color: #262634;
       color: var(--color-white);
       padding: 5px 10px;
-      width: 100%;
+      width: calc(100% - 72px);
       margin: 0 5px;
       svg {
         margin-right: 7px;
@@ -167,11 +168,23 @@
       font-size: var(--text-large);
       text-transform: uppercase;
       font-weight: 500;
-      padding: 16px 0;
     }
 
     &__slider {
       top: 18px;
+    }
+  }
+
+  .product-item {
+    height: auto;
+    margin: 0 0 37px 0;
+
+    &__action {
+      height: 452px;
+    }
+
+    &__image {
+      height: 452px;
     }
   }
 }

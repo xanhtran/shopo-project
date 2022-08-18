@@ -65,12 +65,13 @@
   padding-top: 3px;
   text-transform: uppercase;
   font-size: var(--text-small);
-  .header-links__cart {
+
+  &__cart {
     margin-left: 23px;
   }
 
-  .header-links__signin,
-  .header-links__cart {
+  &__signin,
+  &__cart {
     color: var(--color-primary);
     &:hover {
       color: var(--color-text);
@@ -80,10 +81,6 @@
 
   &:hover {
     color: var(--color-text);
-  }
-
-  .cart {
-    margin-left: 23px;
   }
 }
 
@@ -118,9 +115,21 @@
 
 @media (max-width: 740px) {
   .header {
-    height: 68px;
     display: flex;
     justify-content: space-between;
+    height: 68px;
+  }
+  .header-cart {
+    &-dropdown {
+      position: relative;
+      top: 3px;
+      margin-left: -5px;
+    }
+  }
+
+  .header-sidemenu {
+    margin-left: 10px;
+    flex: 0 0 auto;
   }
 
   .header-dropdown,

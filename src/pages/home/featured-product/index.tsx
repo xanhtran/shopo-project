@@ -3,7 +3,7 @@ import { getProducts } from '@App/entities/product/product.api';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import React, { useEffect, useRef, useState } from 'react';
-import Slider from 'react-slick';
+import Slider, { Settings } from 'react-slick';
 import './featured-product.scss';
 import ProductItem from './ProductItem';
 
@@ -20,7 +20,7 @@ const FeaturedProduct = () => {
     slideRef.current?.slickPrev();
   };
 
-  const settings = {
+  const settings: Settings = {
     infinite: true,
     speed: 500,
     slidesToShow: 4,

@@ -86,7 +86,7 @@ const Header = () => {
 
         <div className="header-cart">
           <LocalMallOutlinedIcon />
-          <ArrowDropDownIcon />
+          <ArrowDropDownIcon className="header-cart-dropdown" />
         </div>
 
         <button className="header-sidemenu" onClick={handleClick}>

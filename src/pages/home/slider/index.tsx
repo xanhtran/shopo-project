@@ -4,7 +4,7 @@ import { sliderImage } from './slider.constants';
 import './slider.scss';
 
 const SampleNextArrow = (props: CustomArrowProps) => {
-  const { className, style, onClick } = props;
+  const { className, onClick } = props;
 
   return <div className={`${className} nextArrow`} onClick={onClick} />;
 };

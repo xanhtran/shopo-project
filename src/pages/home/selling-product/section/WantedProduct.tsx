@@ -1,9 +1,9 @@
-import React, { useRef } from 'react';
-import Slider from 'react-slick';
-import { sellingProduct } from '../selling-product.constant';
 import '@App/pages/home/selling-product/selling-product.scss';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import React, { useRef } from 'react';
+import Slider from 'react-slick';
+import { sellingProduct } from '../selling-product.constant';
 
 const WantedProduct = () => {
   const slideRef = useRef<Slider>(null);
