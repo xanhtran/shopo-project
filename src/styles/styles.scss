@@ -35,7 +35,13 @@ code {
 @media only screen and (max-width: 740px) {
   /* For mobile phones: */
   .wrapper {
+    // width: 100%;
+    border: 1px solid black;
     padding: 0 15px;
     margin: 0 auto;
+  }
+
+  .slick-slider {
+    overflow: hidden;
   }
 }

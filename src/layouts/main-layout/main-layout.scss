@@ -19,8 +19,10 @@
   .main {
     display: flex;
     flex-direction: column-reverse;
+
     .widget {
       width: 100%;
+      margin-right: 0;
     }
     .outlet-product {
       width: 100%;
