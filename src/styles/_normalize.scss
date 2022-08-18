@@ -1,0 +1,34 @@
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  font-family: 'Oswald', sans-serif, Arial, sans-serif;
+  line-height: 1.1;
+}
+
+div,
+span,
+input,
+textarea,
+p,
+a {
+  color: var(--color-text);
+  font-size: var(--text-medium);
+  font-family: 'Poppins', sans-serif, Arial, sans-serif;
+  line-height: 1.2rem;
+  box-sizing: border-box;
+  outline: none;
+  letter-spacing: 0.025em;
+}

@@ -1,0 +1,39 @@
+.widget {
+  width: 100%;
+}
+
+.widget-category-list {
+  background-color: var(--color-bg-sidebar);
+  padding: 31px 30px 27px 30px;
+  margin-bottom: 29px;
+  width: 100%;
+  height: auto;
+  transition: all ease 0.4s;
+  .widget-title {
+    color: var(--color-text);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-size: var(--text-semi-large);
+    font-weight: 600;
+  }
+}
+
+.widget-banner {
+  height: 354px;
+  width: 100%;
+  margin: 0 auto 32px auto;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.widget-newsletter {
+  margin-bottom: 35px;
+}
+
+.widget-testimonial {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}

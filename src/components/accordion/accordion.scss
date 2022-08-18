@@ -1,0 +1,15 @@
+.accordion-container {
+  margin-bottom: 9px;
+  .accordion-header {
+    cursor: pointer;
+  }
+
+  .accordion-content {
+    background-color: var(--color-white-grey);
+    height: 0;
+    text-transform: uppercase;
+    list-style: none;
+    overflow: hidden;
+    transition: height ease 0.3s;
+  }
+}

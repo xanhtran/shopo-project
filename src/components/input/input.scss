@@ -1,0 +1,14 @@
+.input-wrapper {
+  width: 100%;
+  .input-type {
+    width: 100%;
+    padding: 16px 45px 16px 20px;
+    height: 46px;
+    font-size: 13px;
+    color: var(--color-text);
+    box-sizing: border-box;
+    outline: none;
+    text-transform: uppercase;
+    border-width: 0;
+  }
+}
