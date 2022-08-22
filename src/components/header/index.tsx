@@ -40,25 +40,30 @@ const Header = () => {
   };
 
   useEffect(() => {
+    const isNotMobile = document.body.clientWidth > 375;
+
     const handleScrollHeader = () => {
       const observer = new IntersectionObserver(
         (entries, observer) => {
           entries.forEach((entry) => {
             const header = document.querySelector('.header');
+            const scroll = document.querySelector('.scroll');
 
-            if (header) {
+            if (header && scroll) {
               if (entry.intersectionRatio < 1) {
+                console.log('scroll', scroll);
                 header.classList.add('header-fixed');
+                scroll?.classList.add('show-scroll');
               } else {
                 header.classList.remove('header-fixed');
+                scroll?.classList.remove('show-scroll');
               }
             }
           });
         },
         {
           root: null,
-          rootMargin: '15px',
-          threshold: 1,
+          rootMargin: isNotMobile ? '-68px' : undefined,
         }
       );
 

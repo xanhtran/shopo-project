@@ -29,6 +29,10 @@
       margin: 0 auto;
       padding: 0 15px;
     }
+
+    & ~ .main {
+      margin-top: 114px;
+    }
   }
 }
 
@@ -149,6 +153,12 @@
     display: flex;
     justify-content: space-between;
     height: 68px;
+
+    &.header-fixed {
+      & ~ .main {
+        margin-top: 68px;
+      }
+    }
   }
   .header-cart {
     &-dropdown {

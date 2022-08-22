@@ -1,4 +1,5 @@
 import Header from '@components/header';
+import ScrollToTop from '@components/scroll-to-top';
 import Home from '@pages/home';
 import React from 'react';
 import './main-layout.scss';
@@ -18,6 +19,8 @@ const MainLayout = () => {
           <Home />
         </div>
       </div>
+
+      <ScrollToTop />
     </div>
   );
 };
