@@ -40,7 +40,7 @@ const Header = () => {
   };
 
   useEffect(() => {
-    const func = () => {
+    const handleScrollHeader = () => {
       const observer = new IntersectionObserver(
         (entries, observer) => {
           entries.forEach((entry) => {
@@ -67,10 +67,10 @@ const Header = () => {
       featuredProductEl && observer.observe(featuredProductEl);
     };
 
-    window.addEventListener('DOMContentLoaded', func);
+    window.addEventListener('DOMContentLoaded', handleScrollHeader);
 
     return () => {
-      window.removeEventListener('DOMContentLoaded', func);
+      window.removeEventListener('DOMContentLoaded', handleScrollHeader);
     };
   }, []);
 
