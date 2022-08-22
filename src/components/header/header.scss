@@ -4,14 +4,45 @@
   width: 100%;
   height: 114px;
   background-color: var(--color-white);
+
+  &-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: var(--color-white);
+    height: 68px;
+  }
+
+  &.header-fixed {
+    height: 68px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    animation-name: fixedHeader;
+    animation-duration: 0.6s;
+    z-index: 999;
+    box-shadow: 0 0 2px rgb(0 0 0 / 10%), 0 2px 7px rgb(0 0 0 / 12%);
+
+    .header-container {
+      max-width: 1230px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+  }
 }
 
-.header-container {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
+@keyframes fixedHeader {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
 
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .header-dropdown {
   display: flex;
   margin-left: 25px;

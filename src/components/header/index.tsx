@@ -7,7 +7,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { categories, currencies, languages } from './header.constants';
 import './header.scss';
 import { SelectFormType } from './header.types';
@@ -19,7 +19,6 @@ const Header = () => {
     language: { value: languages[0].name },
     category: { value: categories[0].name },
   };
-
   const [values, setValues] = useState<SelectFormType>(initialValues);
 
   const handleClick = () => {
@@ -40,62 +39,99 @@ const Header = () => {
     setValues(formValue);
   };
 
+  useEffect(() => {
+    const func = () => {
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            const header = document.querySelector('.header');
+
+            if (header) {
+              if (entry.intersectionRatio < 1) {
+                header.classList.add('header-fixed');
+              } else {
+                header.classList.remove('header-fixed');
+              }
+            }
+          });
+        },
+        {
+          root: null,
+          rootMargin: '15px',
+          threshold: 1,
+        }
+      );
+
+      const featuredProductEl = document.querySelector('.featured-product__heading');
+
+      featuredProductEl && observer.observe(featuredProductEl);
+    };
+
+    window.addEventListener('DOMContentLoaded', func);
+
+    return () => {
+      window.removeEventListener('DOMContentLoaded', func);
+    };
+  }, []);
+
   return (
-    <header className="header">
-      <div className="header-container">
-        <Logo />
+    <>
+      <header className="header">
+        <div className="header-container ">
+          <Logo />
 
-        <div className="header-dropdown">
-          <Select data={currencies} onChange={onChange} name="currencies" />
+          <div className="header-dropdown">
+            <Select data={currencies} onChange={onChange} name="currencies" />
 
-          <div className="header-language">
-            <Select data={languages} name=" languages" onChange={onChange} />
-          </div>
-        </div>
-
-        <div className="header-search">
-          <div className="header-search__options">
-            <Select data={categories} name="categories" onChange={onChange} />
+            <div className="header-language">
+              <Select data={languages} name=" languages" onChange={onChange} />
+            </div>
           </div>
 
-          <div className="header-search__input">
-            <Input
-              name="input"
-              type="text"
-              value=""
-              placeholder="Search"
-              onChange={(e) => {
-                onChange(e);
-              }}
-            />
-            <button className="header-search__icon">
-              <SearchIcon />
-            </button>
+          <div className="header-search">
+            <div className="header-search__options">
+              <Select data={categories} name="categories" onChange={onChange} />
+            </div>
+
+            <div className="header-search__input">
+              <Input
+                name="input"
+                type="text"
+                value=""
+                placeholder="Search"
+                onChange={(e) => {
+                  onChange(e);
+                }}
+              />
+              <button className="header-search__icon">
+                <SearchIcon />
+              </button>
+            </div>
           </div>
+
+          <div className="header-links">
+            <a href="/" className="header-links__signin">
+              Sign in
+            </a>
+
+            <a href="/" className="header-links__cart">
+              Cart
+            </a>
+          </div>
+
+          <div className="header-cart">
+            <LocalMallOutlinedIcon />
+            <ArrowDropDownIcon className="header-cart-dropdown" />
+          </div>
+
+          <button className="header-sidemenu" onClick={handleClick}>
+            <MenuIcon />
+          </button>
+
+          {isActive && <Drawer setIsActive={setIsActive} />}
         </div>
-
-        <div className="header-links">
-          <a href="/" className="header-links__signin">
-            Sign in
-          </a>
-
-          <a href="/" className="header-links__cart">
-            Cart
-          </a>
-        </div>
-
-        <div className="header-cart">
-          <LocalMallOutlinedIcon />
-          <ArrowDropDownIcon className="header-cart-dropdown" />
-        </div>
-
-        <button className="header-sidemenu" onClick={handleClick}>
-          <MenuIcon />
-        </button>
-
-        {isActive && <Drawer setIsActive={setIsActive} />}
-      </div>
-    </header>
+      </header>
+    </>
   );
 };
 
