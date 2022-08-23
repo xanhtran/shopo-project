@@ -64,6 +64,7 @@ const Header = () => {
         {
           root: null,
           rootMargin: isNotMobile ? '-68px' : undefined,
+          threshold: 1,
         }
       );
 
