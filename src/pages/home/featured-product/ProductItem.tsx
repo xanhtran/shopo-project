@@ -1,13 +1,39 @@
 import { ProductType } from '@App/common/types';
-import React from 'react';
+import React, { useEffect } from 'react';
 import './featured-product.scss';
 
 const ProductItem = (props: ProductType) => {
-  const { title, price, image } = props;
+  const { title, price, image, id } = props;
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          console.log('entry', entry);
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('lazy-background');
+
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.7,
+      }
+    );
+
+    const productItemImg = document.getElementById(id as string);
+
+    productItemImg && observer.observe(productItemImg);
+  });
 
   return (
     <div className="product-item">
-      <div className="product-item__image" style={{ backgroundImage: `url(${image})` }}>
+      <div
+        id={id}
+        className="product-item__image lazy-background"
+        style={{ backgroundImage: `url(${image})` }}
+      >
         <span className="product-item__image__sale">-55%</span>
       </div>
 

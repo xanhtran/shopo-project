@@ -120,6 +120,8 @@
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    opacity: 1;
+    transition: all 3s;
 
     &__sale {
       position: absolute;
@@ -160,6 +162,15 @@
       margin-top: auto;
     }
   }
+}
+
+.lazy-background {
+  background-image: url('https://wtwp.com/wp-content/uploads/2015/06/placeholder-image.png') !important;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 1px solid var(--color-border);
+  opacity: 0.2;
 }
 
 @media (max-width: 740px) {

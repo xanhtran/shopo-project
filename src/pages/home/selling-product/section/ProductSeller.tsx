@@ -17,7 +17,7 @@ const ProductSeller = (props: BestSellerPropsType) => {
     };
 
     getProductSeller();
-  }, [sellerProduct]);
+  }, []);
 
   return (
     <div className="product-seller">

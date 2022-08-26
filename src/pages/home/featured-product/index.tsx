@@ -47,7 +47,7 @@ const FeaturedProduct = () => {
     };
 
     getProduct();
-  }, [data]);
+  }, []);
 
   return (
     <div className="featured-product">
@@ -67,7 +67,13 @@ const FeaturedProduct = () => {
       <Slider {...settings} ref={slideRef}>
         {data?.map((item) => {
           return (
-            <ProductItem key={item.id} title={item.title} image={item.image} price={item.price} />
+            <ProductItem
+              key={item.id}
+              id={item.id}
+              title={item.title}
+              image={item.image}
+              price={item.price}
+            />
           );
         })}
       </Slider>
